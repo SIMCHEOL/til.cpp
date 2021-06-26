@@ -1,0 +1,15 @@
+language: cpp
+compiler:
+  - gcc
+os:
+  - linux
+
+before_script:
+  - mkdir -p ./bin
+
+script:
+  - make run
+
+addons:
+  apt:
+    update: true
