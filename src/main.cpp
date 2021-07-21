@@ -3,6 +3,7 @@
 #include <myoflib.hpp>
 #include <vector>
 #include <string>
+#include "Singleton.hpp"
 
 void printVector(std::vector<std::pair<int, std::string>> v) {
     std::cout << __func__ << std::endl;
@@ -36,6 +37,11 @@ int main() {
     modifyVector(&ref_mymap);
     printVector(mymap);
     printVector(ref_mymap);
+
+    // Singleton test
+    Singleton& scopedInstance = Singleton::getIncetance();
+
+    scopedInstance.testSingleton();
 
     std::cout << "modify Start 2" << std::endl;
     modifyVector_2(ref_mymap);
